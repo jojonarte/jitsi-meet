@@ -162,6 +162,7 @@ class LoginDialog extends Component<Props, State> {
                 onCancel = { this._onCancel }
                 onSubmit = { this._onLogin }>
                 <View style = { styles.loginDialog }>
+                    <Text>{this.state.username}</Text>
                     <TextInput
                         autoCapitalize = { 'none' }
                         autoCorrect = { false }
@@ -175,7 +176,7 @@ class LoginDialog extends Component<Props, State> {
                         onChangeText = { this._onPasswordChange }
                         placeholder = { t('dialog.userPassword') }
                         placeholderTextColor = { PLACEHOLDER_COLOR }
-                        secureTextEntry = { true }
+                        secureTextEntry = { false }
                         style = { [
                             _dialogStyles.field,
                             inputDialogStyle.bottomField
