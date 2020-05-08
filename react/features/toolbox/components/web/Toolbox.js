@@ -1180,30 +1180,30 @@ class Toolbox extends Component<Props, State> {
                 && this._isDesktopSharingButtonVisible()) {
             buttonsLeft.push('desktop');
         }
-        if (this._shouldShowButton('raisehand')) {
-            buttonsLeft.push('raisehand');
-        }
+        // if (this._shouldShowButton('raisehand')) {
+        //     buttonsLeft.push('raisehand');
+        // }
         if (this._shouldShowButton('chat')) {
             buttonsLeft.push('chat');
         }
         if (this._shouldShowButton('closedcaptions')) {
             buttonsLeft.push('closedcaptions');
         }
-        if (overflowHasItems) {
-            buttonsRight.push('overflowmenu');
-        }
-        if (this._shouldShowButton('info')) {
-            buttonsRight.push('info');
-        }
-        if (this._shouldShowButton('invite') && !_hideInviteButton) {
-            buttonsRight.push('invite');
-        }
-        if (this._shouldShowButton('tileview')) {
-            buttonsRight.push('tileview');
-        }
-        if (this._shouldShowButton('localrecording')) {
-            buttonsRight.push('localrecording');
-        }
+        // if (overflowHasItems) {
+        //     buttonsRight.push('overflowmenu');
+        // }
+        // if (this._shouldShowButton('info')) {
+        //     buttonsRight.push('info');
+        // }
+        // if (this._shouldShowButton('invite') && !_hideInviteButton) {
+        //     buttonsRight.push('invite');
+        // }
+        // if (this._shouldShowButton('tileview')) {
+        //     buttonsRight.push('tileview');
+        // }
+        // if (this._shouldShowButton('localrecording')) {
+        //     buttonsRight.push('localrecording');
+        // }
 
         const movedButtons = [];
 
