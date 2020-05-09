@@ -12,6 +12,7 @@ import { SettingsButton, SETTINGS_TABS } from '../../settings';
 
 import { AbstractWelcomePage, _mapStateToProps } from './AbstractWelcomePage';
 import Tabs from './Tabs';
+import { green } from 'color-name';
 
 /**
  * The pattern used to validate room name.
@@ -158,77 +159,98 @@ class WelcomePage extends AbstractWelcomePage {
      */
     render() {
         const { t } = this.props;
-        const { APP_NAME } = interfaceConfig;
+
+        // const { APP_NAME } = interfaceConfig;
+
         const showAdditionalContent = this._shouldShowAdditionalContent();
         const showAdditionalToolbarContent = this._shouldShowAdditionalToolbarContent();
         const showResponsiveText = this._shouldShowResponsiveText();
 
         return (
             <div
-                className = { `welcome ${showAdditionalContent
-                    ? 'with-content' : 'without-content'}` }
+                className = { `welcome ${
+                    showAdditionalContent ? 'with-content' : 'without-content'
+                }` }
                 id = 'welcome_page'>
-                <div className = 'welcome-watermark'>
-                    <Watermarks />
+                <div className = 'left-panel'>
+                    <div className = 'logo-container leftwatermark' />
+                    <div className = 'panel-item'>
+                        DEVICE
+                        <div className = 'welcome-page-settings'>
+                            <SettingsButton
+                                defaultTab = { SETTINGS_TABS.CALENDAR } />
+                            {showAdditionalToolbarContent ? (
+                                <div
+                                    className = 'settings-toolbar-content'
+                                    ref = { this._setAdditionalToolbarContentRef } />
+                            ) : null}
+                        </div>
+                    </div>
+                    <div className = 'panel-item'>USER PROFILE</div>
+                    <div className = 'panel-item'>MORE</div>
                 </div>
-                <div className = 'header'>
-                    <div className = 'welcome-page-settings'>
-                        <SettingsButton
-                            defaultTab = { SETTINGS_TABS.CALENDAR } />
-                        { showAdditionalToolbarContent
-                            ? <div
-                                className = 'settings-toolbar-content'
-                                ref = { this._setAdditionalToolbarContentRef } />
-                            : null
-                        }
-                    </div>
-                    <div className = 'header-image' />
-                    <div className = 'header-text'>
-                        <h1 className = 'header-text-title'>
-                            { t('welcomepage.title') }
-                        </h1>
-                        <p className = 'header-text-description'>
-                            { t('welcomepage.appDescription',
-                                { app: APP_NAME }) }
-                        </p>
-                    </div>
-                    <div id = 'enter_room'>
-                        <div className = 'enter-room-input-container'>
-                            <div className = 'enter-room-title'>
-                                { t('welcomepage.enterRoomTitle') }
+                <div className = 'main-container'>
+                    <div className = 'header'>
+                        <div className = 'conference-info-container'>
+                            <div className = 'header-image' />
+                            <div className = 'header-text'>
+                                <h1 className = 'header-text-title'>
+                                    {t('welcomepage.cubiTitle')}
+                                </h1>
+                                <p className = 'header-text-description'>
+                                    {this.state.roomPlaceholder}
+                                </p>
                             </div>
-                            <form onSubmit = { this._onFormSubmit }>
-                                <input
-                                    autoFocus = { true }
-                                    className = 'enter-room-input'
-                                    id = 'enter_room_field'
-                                    onChange = { this._onRoomChange }
-                                    pattern = { ROOM_NAME_VALIDATE_PATTERN_STR }
-                                    placeholder = { this.state.roomPlaceholder }
-                                    ref = { this._setRoomInputRef }
-                                    title = { t('welcomepage.roomNameAllowedChars') }
-                                    type = 'text'
-                                    value = { this.state.room } />
-                            </form>
+                            <div id = 'enter_room'>
+                                <div className = 'enter-room-input-container'>
+                                    <div className = 'enter-room-title'>
+                                        {t('welcomepage.enterRoomTitle')}
+                                    </div>
+                                    <form onSubmit = { this._onFormSubmit }>
+                                        <input
+                                            autoFocus = { true }
+                                            className = 'enter-room-input'
+                                            id = 'enter_room_field'
+                                            onChange = { this._onRoomChange }
+                                            pattern = {
+                                                ROOM_NAME_VALIDATE_PATTERN_STR
+                                            }
+                                            placeholder = {
+                                                this.state.roomPlaceholder
+                                            }
+                                            ref = { this._setRoomInputRef }
+                                            title = { t(
+                                                'welcomepage.roomNameAllowedChars'
+                                            ) }
+                                            type = 'text'
+                                            value = { this.state.room } />
+                                    </form>
+                                </div>
+                                <div
+                                    className = 'welcome-page-button'
+                                    id = 'enter_room_button'
+                                    onClick = { this._onFormSubmit }>
+                                    {showResponsiveText
+                                        ? t('welcomepage.goSmall')
+                                        : t('welcomepage.go')}
+                                </div>
+                            </div>
                         </div>
-                        <div
-                            className = 'welcome-page-button'
-                            id = 'enter_room_button'
-                            onClick = { this._onFormSubmit }>
-                            {
-                                showResponsiveText
-                                    ? t('welcomepage.goSmall')
-                                    : t('welcomepage.go')
-                            }
-                        </div>
+                        <div className = 'sirius-id-container'>SIRIUS ID</div>
                     </div>
-                    { this._renderTabs() }
+                    <div className = 'conference-list-container'>
+                        {this._renderTabs()}
+                    </div>
+                    <div className = 'bottom-container'>
+                        <div className = 'schedule-container'>SCHEDULE</div>
+                        <div className = 'news-feed-container'>NEWS FEED</div>
+                    </div>
                 </div>
-                { showAdditionalContent
-                    ? <div
+                {showAdditionalContent ? (
+                    <div
                         className = 'welcome-page-content'
                         ref = { this._setAdditionalContentRef } />
-                    : null }
+                ) : null}
             </div>
         );
     }
