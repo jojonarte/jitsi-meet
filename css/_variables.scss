@@ -103,7 +103,6 @@ $sidebarWidth: 375px;
  */
 $borderRadius: 4px;
 $defaultWatermarkLink: '../images/watermark.png';
-$cubiLogo: '../images/cubiLogo.png';
 $popoverMenuPadding: 13px;
 $happySoftwareBackground: transparent;
 $desktopAppDragBarHeight: 25px;
@@ -273,3 +272,7 @@ $chromeExtensionBannerRight: 16px;
 $chromeExtensionBannerTopInMeeting: 10px;
 $chromeExtensionBannerRightInMeeeting: 10px;
 
+/* 
+* Cubi variables
+*/
+$cubiDefaultLogoLink: "../images/cubi-logo.png";
