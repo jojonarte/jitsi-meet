@@ -14,7 +14,7 @@ var interfaceConfig = {
     INITIAL_TOOLBAR_TIMEOUT: 20000,
     TOOLBAR_TIMEOUT: 4000,
     TOOLBAR_ALWAYS_VISIBLE: false,
-    DEFAULT_REMOTE_DISPLAY_NAME: 'Fellow Cubi',
+    DEFAULT_REMOTE_DISPLAY_NAME: 'Fellow Cubi Participant',
     DEFAULT_LOCAL_DISPLAY_NAME: 'me',
     SHOW_JITSI_WATERMARK: true,
     JITSI_WATERMARK_LINK: 'https://jnjitsi.com',

@@ -11,9 +11,9 @@ import { connect as reactReduxConnect } from '../../../base/redux';
 import { getConferenceNameForTitle } from '../../../base/conference';
 import { Chat } from '../../../chat';
 import { Filmstrip } from '../../../filmstrip';
-import { CalleeInfoContainer } from '../../../invite';
+import { CalleeInfoContainer, InfoDialogButton } from '../../../invite';
 import { LargeVideo } from '../../../large-video';
-import { LAYOUTS, getCurrentLayout } from '../../../video-layout';
+import { LAYOUTS, getCurrentLayout, TileViewButton } from '../../../video-layout';
 
 import {
     Toolbox,
@@ -192,8 +192,25 @@ class Conference extends AbstractConference<Props, *> {
                 <Subject />
                 <div id = 'videospace'>
                     <LargeVideo />
-                    { hideVideoQualityLabel
-                        || <Labels /> }
+                    <div className = 'headerButtonsContainer'>
+                        <InfoDialogButton />
+                        <TileViewButton />
+                        <div className = 'headerButton'>
+                            MENU
+                            {/* <OverflowMenuButton
+                            isOpen={_overflowMenuVisible}
+                            onVisibilityChange={this._onSetOverflowVisible}
+                        >
+                            <ul
+                                aria-label={t(toolbarAccLabel)}
+                                className="overflow-menu"
+                            >
+                                {overflowMenuContent}
+                            </ul>
+                        </OverflowMenuButton> */}
+                        </div>
+                    </div>
+                    {hideVideoQualityLabel || <Labels />}
                     <Filmstrip filmstripOnly = { filmstripOnly } />
                 </div>
 
