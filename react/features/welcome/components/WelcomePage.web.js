@@ -173,7 +173,9 @@ class WelcomePage extends AbstractWelcomePage {
                 }` }
                 id = 'welcome_page'>
                 <div className = 'left-panel'>
-                    <div className = 'logo-container leftwatermark' />
+                    <div className = 'logo-container'>
+                        <Watermarks />
+                    </div>
                     <div className = 'panel-item'>
                         DEVICE
                         <div className = 'welcome-page-settings'>
@@ -303,6 +305,7 @@ class WelcomePage extends AbstractWelcomePage {
      * @returns {ReactElement|null}
      */
     _renderTabs() {
+        // TODO: refactor later for other containers
         if (isMobileBrowser()) {
             return null;
         }

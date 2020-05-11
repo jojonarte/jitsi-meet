@@ -78,7 +78,6 @@ body.welcome-page {
         .header-text {
             display: flex;
             flex-direction: column;
-            margin-top: 30px;
             margin-bottom: $welcomePageHeaderTextMarginBottom;
             max-width: calc(100% - 40px);
             width: 650px;
@@ -109,12 +108,12 @@ body.welcome-page {
             width: $welcomePageEnterRoomWidth;
             z-index: $zindex2;
             background-color: #fff;
-            padding: $welcomePageEnterRoomPadding;
+            padding: 8px;//$welcomePageEnterRoomPadding;
             border-radius: $welcomePageEnterRoomBorderRadius;
 
             .enter-room-input-container {
                 width: 100%;
-                padding: $welcomePageEnterRoomInputContainerPadding;
+                padding: 8px;//$welcomePageEnterRoomInputContainerPadding;
                 text-align: left;
                 color: #253858;
                 height: fit-content;
@@ -230,7 +229,9 @@ body.welcome-page {
 
     .conference-list-container {
         height: 35vh;
-        border: solid 1px;
+        width: 100%;
+        // border: solid 1px;
+        // padding: 0 8px;
     }
 
     .bottom-container {
