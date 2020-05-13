@@ -6,8 +6,7 @@ import React from 'react';
 import { Icon } from '../../../base/icons';
 
 import AbstractToolbarButton from '../AbstractToolbarButton';
-import type { Props as AbstractToolbarButtonProps }
-    from '../AbstractToolbarButton';
+import type { Props as AbstractToolbarButtonProps } from '../AbstractToolbarButton';
 
 /**
  * The type of the React {@code Component} props of {@link ToolbarButton}.
@@ -55,13 +54,15 @@ class ToolbarButton extends AbstractToolbarButton<Props> {
                 aria-label = { this.props.accessibilityLabel }
                 className = 'toolbox-button'
                 onClick = { this.props.onClick }>
-                { this.props.tooltip
-                    ? <Tooltip
+                {this.props.tooltip ? (
+                    <Tooltip
                         content = { this.props.tooltip }
                         position = { this.props.tooltipPosition }>
-                        { children }
+                        {children}
                     </Tooltip>
-                    : children }
+                )
+                    : children
+                }
             </div>
         );
     }
@@ -73,7 +74,10 @@ class ToolbarButton extends AbstractToolbarButton<Props> {
      */
     _renderIcon() {
         return (
-            <div className = { `toolbox-icon headerButton ${this.props.toggled ? 'toggled' : ''}` }>
+            <div
+                className = { `toolbox-icon headerButton ${
+                    this.props.toggled ? 'toggled' : ''
+                }` }>
                 <Icon src = { this.props.icon } />
             </div>
         );
