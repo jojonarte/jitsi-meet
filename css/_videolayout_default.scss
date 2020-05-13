@@ -723,11 +723,96 @@
     .headerButton {
         width: 4rem;
         height: 70%;
-    border-radius: 4px;
+        border-radius: 4px;
         color: #fff;
-        // background: linear-gradient(0deg, #eb000e, rgba(235, 0, 14, 0.5));
         align-items: center;
         display: flex;
         justify-content: center;
+
+                .overflow-menu {
+            font-size: 1.2em;
+            list-style-type: none;
+            background-color: $overflowMenuBG;
+            /**
+             * Undo atlaskit padding by reducing margins.
+             */
+            margin: -16px -24px;
+            padding: 4px 0;
+
+            .overflow-menu-item {
+                align-items: center;
+                color: $overflowMenuItemColor;
+                cursor: pointer;
+                display: flex;
+                font-size: 14px;
+                height: 22px;
+                padding: 5px 12px;
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                &:hover {
+                    background-color: $overflowMenuItemHoverBG;
+                    color: $overflowMenuItemHoverColor;
+                }
+
+                &.unclickable {
+                    cursor: default;
+                }
+                &.unclickable:hover {
+                    background: inherit;
+                }
+                &.disabled {
+                    cursor: initial;
+                    color: #3b475c;
+                }
+            }
+
+            .beta-tag {
+                background: $overflowMenuItemColor;
+                border-radius: 2px;
+                color: $overflowMenuBG;
+                font-size: 11px;
+                font-weight: bold;
+                margin-left: 8px;
+                padding: 0 6px;
+            }
+
+            .overflow-menu-item-icon {
+                margin-right: 10px;
+
+                i {
+                    display: inline;
+                    font-size: 24px;
+                }
+
+                i:hover {
+                    background-color: initial;
+                }
+
+                img {
+                    max-width: 24px;
+                    max-height: 24px;
+                }
+
+                svg {
+                    fill: #B8C7E0 !important;
+                }
+            }
+
+            .profile-text {
+                max-width: 150px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+        }
     }
+}
+.overflow-list {
+    padding: 0;
+    list-style-type: none;
 }
