@@ -254,6 +254,7 @@ class Conference extends AbstractConference<Props, *> {
                 className = { _layoutClassName }
                 id = 'videoconference_page'
                 onMouseMove = { this._onShowToolbar }>
+
                 <Notice />
                 <Subject />
                 <div id = 'videospace'>
@@ -287,6 +288,8 @@ class Conference extends AbstractConference<Props, *> {
                 {this.renderNotificationsContainer()}
 
                 {!filmstripOnly && _showPrejoin && <Prejoin />}
+
+                { !filmstripOnly && _showPrejoin && <Prejoin />}
 
                 <CalleeInfoContainer />
             </div>
