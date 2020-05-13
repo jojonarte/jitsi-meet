@@ -272,7 +272,7 @@ class Conference extends AbstractConference<Props, *> {
                                     aria-label = { t(
                                         'toolbar.accessibilityLabel.moreActionsMenu'
                                     ) }
-                                    className = 'overflow-menu overflow-list'>
+                                    className = 'overflow-menu'>
                                     {overflowMenuContent}
                                 </ul>
                             </OverflowMenuButton>
