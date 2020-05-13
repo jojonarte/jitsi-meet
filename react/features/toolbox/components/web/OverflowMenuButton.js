@@ -52,8 +52,9 @@ class OverflowMenuButton extends Component<Props> {
 
         // Bind event handlers so they are only bound once per instance.
         this._onCloseDialog = this._onCloseDialog.bind(this);
-        this._onToggleDialogVisibility
-            = this._onToggleDialogVisibility.bind(this);
+        this._onToggleDialogVisibility = this._onToggleDialogVisibility.bind(
+            this
+        );
     }
 
     /**
@@ -71,10 +72,11 @@ class OverflowMenuButton extends Component<Props> {
                     content = { children }
                     isOpen = { isOpen }
                     onClose = { this._onCloseDialog }
-                    position = { 'top right' }>
+                    position = { 'bottom right' }>
                     <ToolbarButton
-                        accessibilityLabel =
-                            { t('toolbar.accessibilityLabel.moreActions') }
+                        accessibilityLabel = { t(
+                            'toolbar.accessibilityLabel.moreActions'
+                        ) }
                         icon = { IconMenuThumb }
                         onClick = { this._onToggleDialogVisibility }
                         toggled = { isOpen }

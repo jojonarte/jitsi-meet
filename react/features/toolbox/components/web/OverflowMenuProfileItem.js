@@ -60,7 +60,8 @@ class OverflowMenuProfileItem extends Component<Props> {
     render() {
         const { _localParticipant, _unclickable } = this.props;
         const classNames = `overflow-menu-item ${
-            _unclickable ? 'unclickable' : ''}`;
+            _unclickable ? 'unclickable' : ''
+        }`;
         let displayName;
 
         if (_localParticipant && _localParticipant.name) {
@@ -77,11 +78,9 @@ class OverflowMenuProfileItem extends Component<Props> {
                 <span className = 'overflow-menu-item-icon'>
                     <Avatar
                         participantId = { _localParticipant.id }
-                        size = { 24 } />
+                        size = { 22 } />
                 </span>
-                <span className = 'profile-text'>
-                    { displayName }
-                </span>
+                <span className = 'profile-text'>{displayName}</span>
             </li>
         );
     }
@@ -114,7 +113,8 @@ class OverflowMenuProfileItem extends Component<Props> {
 function _mapStateToProps(state) {
     return {
         _localParticipant: getLocalParticipant(state),
-        _unclickable: !state['features/base/jwt'].isGuest
+        _unclickable:
+            !state['features/base/jwt'].isGuest
             || !interfaceConfig.SETTINGS_SECTIONS.includes('profile')
     };
 }

@@ -174,7 +174,8 @@ class InfoDialogButton extends Component<Props, State> {
                             dialIn = { _dialIn }
                             isInlineDialog = { true }
                             liveStreamViewURL = { _liveStreamViewURL }
-                            onClose = { this._onDialogClose } /> }
+                            onClose = { this._onDialogClose } />
+                    }
                     isOpen = { showDialog }
                     onClose = { this._onDialogClose }
                     position = { 'bottom right' }>
