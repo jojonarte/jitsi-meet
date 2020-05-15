@@ -729,15 +729,15 @@
         display: flex;
         justify-content: center;
 
-                .overflow-menu {
-            font-size: 1.2em;
-            list-style-type: none;
-            background-color: $overflowMenuBG;
-            /**
-             * Undo atlaskit padding by reducing margins.
-             */
-            margin: -16px -24px;
-            padding: 4px 0;
+            .overflow-menu {
+                font-size: 1.2em;
+                list-style-type: none;
+                background-color: $overflowMenuBG;
+                /**
+                * Undo atlaskit padding by reducing margins.
+                */
+                margin: -16px -24px;
+                padding: 4px 0;
 
             .overflow-menu-item {
                 align-items: center;
