@@ -1,6 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  addons: [
+    '@storybook/addon-actions/register',
+    '@storybook/addon-knobs/register'
+  ],
   stories: ['../meetyx/**/*.stories.[tj]s'],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

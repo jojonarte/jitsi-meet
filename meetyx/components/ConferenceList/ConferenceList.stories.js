@@ -4,4 +4,4 @@ import './_conference_list.scss';
 
 export default { title: 'ConferenceList' };
 
-export const def = () => <ConferenceList />;
+export const Component = () => <ConferenceList />;

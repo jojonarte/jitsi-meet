@@ -1,0 +1,47 @@
+.remote-video-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 187px;
+  position: relative;
+  
+  img {
+    width: 187px;
+    height: 187px;
+  }
+  
+  span {
+    margin-top: 4px;
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: center;
+  }
+  .dominant-speaker {
+    color: #0AD22B;
+  }
+
+  .remote-video__statusbar {
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      height: 43px;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #E3E3E3;
+
+      .dominant-speaker g, .dominant-speaker path {
+        fill: #0AD22B;
+      }
+
+      img {
+        margin: auto;
+        display: block;
+        width: 18px;
+        height: 25px;
+      }
+  }
+}

@@ -95,6 +95,9 @@ $flagsImagePath: "../images/";
 /* Modules END */
 
 /* Meetyx Modules BEGIN */
+body {
+  font-family: Roboto;
+}
 
 @import '../meetyx/components/ConferenceList/conference_list';
 
