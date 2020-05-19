@@ -33,11 +33,32 @@ export default class RemoteVideo extends React.Component<Props> {
     render() {
         return (
             <div className="remote-video-container">
-                <img src={this.props.avatarUrl} alt={this.props.id} />
+                {this.renderFeed()}
                 {this.renderStatusBar()}
-                <span className={this.props.isDominantSpeaker ? 'dominant-speaker' : ''}>{this.props.name}</span>
+                {this.renderName()}
             </div>
         );
+    }
+
+    renderName() {
+        let { name } = this.props;
+        const { isLocal, isDominantSpeaker } = this.props;
+
+        if (isLocal) {
+            name = 'You';
+        }
+
+        return <span className={isDominantSpeaker ? 'dominant-speaker' : ''}>{name}</span>
+    }
+
+    renderFeed() {
+        if (this.props.isVideoMuted) {
+            return <img src={this.props.avatarUrl} alt={this.props.id} />;
+        }
+
+        // TODO: render stream
+        return <img alt={this.props.id} />;
+
     }
 
     renderStatusBar() {

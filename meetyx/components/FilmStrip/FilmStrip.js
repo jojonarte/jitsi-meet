@@ -2,7 +2,10 @@
 
 import React from 'react';
 
-type RemoteVideo = {
+import RemoteVideo from '../RemoteVideo';
+import { defaultProps } from '@atlaskit/button';
+
+type RemoteVideoType = {
   id: String,
   flipX: Boolean,
   isAudioMuted: Boolean,
@@ -12,34 +15,17 @@ type RemoteVideo = {
 };
 
 type Props = {
-    remoteVideos: Array<RemoteVideo>
+    remoteVideos: { [key: String]: RemoteVideoType }
 };
-
-// dummy
-const remoteVideos = [
-    {
-        id: 'sample1',
-        flipX: false,
-        isAudioMuted: false,
-        isLocal: true,
-        isVideoMuted: true,
-        stream: null
-    },
-    {
-        id: 'sample2',
-        flipX: false,
-        isAudioMuted: false,
-        isLocal: false,
-        isVideoMuted: true,
-        stream: null
-    }
-];
 
 /**
  * Custom Film Strip component
  *
  */
 export default class FilmStrip extends React.PureComponent<Props> {
+    static defaultProps = {
+        remoteVideos: {}
+    }
 
     /**
     * Implements React's {@link Component#render()}.
@@ -48,8 +34,24 @@ export default class FilmStrip extends React.PureComponent<Props> {
     * @returns {ReactElement}
     */
     render() {
-        return (
-            <div>Film strip</div>
-        );
+        if (!Object.keys(this.props.remoteVideos).length) {
+            return <h1>TODO: maybe something to show empty?</h1>;
+        }
+
+        return this._renderFilms();
+    }
+
+    /**
+     * renders all remote videos available
+     */
+    _renderFilms() {
+        return Object.values(this.props.remoteVideos).map(this._renderRemoteVideo);
+    }
+
+    /**
+     * renders specific RemoteVideo
+     */
+    _renderRemoteVideo(remoteVideo: RemoteVideoType) {
+        return <RemoteVideo {...remoteVideo} />;
     }
 }
