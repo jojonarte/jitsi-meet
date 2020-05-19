@@ -14,8 +14,11 @@ type RemoteVideoType = {
   stream: MediaStream,
 };
 
+type FilmStripMode = 'horizontal' | 'vertical' | 'tiled'
+
 type Props = {
-    remoteVideos: { [key: String]: RemoteVideoType }
+    remoteVideos: { [key: String]: RemoteVideoType },
+    mode: FilmStripMode
 };
 
 /**
@@ -45,7 +48,13 @@ export default class FilmStrip extends React.PureComponent<Props> {
      * renders all remote videos available
      */
     _renderFilms() {
-        return Object.values(this.props.remoteVideos).map(this._renderRemoteVideo);
+        const { mode = 'vertical', remoteVideos } = this.props;
+
+        return (
+            <div className={`filmstrip-container ${mode}`}>
+                {Object.values(remoteVideos).map(this._renderRemoteVideo)}
+            </div>
+        );
     }
 
     /**

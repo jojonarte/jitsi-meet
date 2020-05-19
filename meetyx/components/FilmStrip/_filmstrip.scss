@@ -1,0 +1,20 @@
+.filmstrip-container {
+  display: flex;
+
+  div {
+    margin: 16px;
+  }
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.tiled {
+  flex-wrap: wrap;
+
+}

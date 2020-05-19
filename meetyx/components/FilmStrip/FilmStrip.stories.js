@@ -19,7 +19,7 @@ const remoteVideos = {
         stream: null,
         name: 'Jojo',
         isDominantSpeaker: false,
-        avatarUrl: 'https://gizmoposts24.com/wp-content/uploads/2020/03/mandalorian-babyyoda-plush-frontpage-700x311-1-150x150.jpg',
+        avatarUrl: 'http://placekitten.com/187/187',
     },
     sample2: {
         id: 'sample2',
@@ -30,7 +30,7 @@ const remoteVideos = {
         stream: null,
         name: 'Jojo2',
         isDominantSpeaker: false,
-        avatarUrl: 'https://gizmoposts24.com/wp-content/uploads/2020/03/mandalorian-babyyoda-plush-frontpage-700x311-1-150x150.jpg',
+        avatarUrl: 'http://placekitten.com/187/187',
     },
     sample3: {
         id: 'sample3',
@@ -41,13 +41,13 @@ const remoteVideos = {
         stream: null,
         name: 'Jojo2',
         isDominantSpeaker: false,
-        avatarUrl: 'https://gizmoposts24.com/wp-content/uploads/2020/03/mandalorian-babyyoda-plush-frontpage-700x311-1-150x150.jpg',
+        avatarUrl: 'http://placekitten.com/187/187',
     },
 };
 
-export const VerticalMode = () => <FilmStrip remoteVideos={object('Remote Video Feed', remoteVideos)} />;
+export const VerticalMode = () => <FilmStrip mode="vertical" remoteVideos={object('Remote Video Feed', remoteVideos)} />;
 
-export const TileMode = () => <FilmStrip remoteVideos={object('Remote Video Feed', remoteVideos)} />;
+export const TileMode = () => <FilmStrip mode="horizontal" remoteVideos={object('Remote Video Feed', remoteVideos)} />;
 
-export const HorizontalMode = () => <FilmStrip remoteVideos={object('Remote Video Feed', remoteVideos)} />;
+export const HorizontalMode = () => <FilmStrip mode="tiled" remoteVideos={object('Remote Video Feed', remoteVideos)} />;
 
