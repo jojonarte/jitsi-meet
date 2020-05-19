@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../react/**/*.stories.[tj]s'],
+  stories: ['../meetyx/**/*.stories.[tj]s'],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
