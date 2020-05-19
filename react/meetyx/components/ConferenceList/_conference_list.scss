@@ -1,0 +1,88 @@
+.conference-list-container {
+    background-color: rgb(14, 29, 42);
+    height: 70vh;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+
+    p {
+        font-family: Roboto;
+    }
+
+    .conference-list-top {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+
+        .conference-list-filter-button {
+            background: none;
+            border: none;
+            color: white;
+        }
+    }
+
+    .conference-list-item {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        margin: 12px 0;
+        align-items: center;
+    }
+
+    .conference-list-avatar {
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        background-color: white;
+    }
+
+    .conference-list-item-container {
+        height: 80%;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+
+        .conference-list-item-container::-webkit-scrollbar {
+            display: none !important;
+        }
+
+
+    }
+
+    .conference-list-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 15px;
+        width: 145px;
+
+        .meeting-title {
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .meeting-status {
+            font-size: 11px;
+            line-height: 0px;
+        }
+
+
+    }
+
+    .confernce-list-search {
+        height: 25px;
+        width: 240px;
+        border-radius: 15px;
+        background-color: white;
+        position: absolute;
+        bottom: 15px;
+    }
+}
